@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcakes</title>
+    <script src="https://unpkg.com/axios@latest/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <h1>Cupcake List</h1>
+    <ul id="cupcakes">
+        <!-- Cupcakes will be appended here -->
+    </ul>
+
+    <h2>Add a New Cupcake</h2>
+    <form id="new-cupcake-form" action="/api/cupcakes" method="post">
+        {{ form.flavor.label }} {{ form.flavor(id='flavor') }} <br>
+        {{ form.size.label }} {{ form.size(id='size') }} <br>
+        {{ form.rating.label }} {{ form.rating(id='rating') }} <br>
+        {{ form.image.label }} {{ form.image(id='image') }} <br>
+        {{ form.submit() }}
+    </form>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    
+</body>
+</html>
